@@ -33,13 +33,13 @@ exec chromium --start-fullscreen --window-size=1920,1080 --window-position=0,0 -
 # TERMINALS
 
 # Pricedisplay, top right corner
-(sleep 2; xrdb -merge pricedisplay && urxvt -e pricedisplay)&
+(sleep 2; xrdb -merge /opt/panel/Xresources/pricedisplay && urxvt -e pricedisplay)&
 
 # TTY-Clock, middle right
-(sleep 4; xrdb -merge tty-clock && urxvt -e tty-clock)&
+(sleep 4; xrdb -merge /opt/panel/Xresources/tty-clock && urxvt -e tty-clock)&
 
 # Wifi setup QR code, bottom right
-(sleep 8; xrdb -merge wificode && urxvt -e wifi-qr-code)&
+(sleep 8; xrdb -merge /opt/panel/Xresources/wificode && urxvt -e wifi-qr-code)&
 
 # Run VNC server for logging in to grafana etc.
 x11vnc -display :0 -usepw -noxdamage -forever -o ~/.local/log/x11vnc.log &
