@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -e
+
+export DISPLAY=:0.0
+
+# no blanking of daashboard panel!
+xset s off
+xset s noblank
+xset -dpms
+xset dpms 0 0 0
+
+# Run own customizations like disabling touchscreen
+if [ -x /opt/panel/bin/panel-custom ]
+then
+    /opt/panel/bin/panel-custom
+fi
+
+# load common rxvt settings
+xrdb -merge /opt/panel/Xresources/common
+
+# BROWSERS
+
+# open browser window to background, showing Grafana dashboard.
+exec chromium --start-fullscreen --window-size=1920,1080 --window-position=0,0 --app="https://grafana.laiti.iki.fi/d/de31sljo07myoc/asuite\?orgId=1\&refresh=5s\&theme=dark\&kiosk"
+
+# open browser window to bottom, showing YMPD with custom CSS.
+(sleep 6; chromium --temp-profile --window-size=1250,332 --window-position=650,701 --app=http://localhost:58043)&
+
+
+# TERMINALS
+
+# Pricedisplay, top right corner
+(sleep 2; xrdb -merge /opt/panel/Xresources/pricedisplay && urxvt -e /opt/panel/bin/pricedisplay)&
+
+# TTY-Clock, middle right
+(sleep 4; xrdb -merge /opt/panel/Xresources/tty-clock && urxvt -e tty-clock)&
+
+# Wifi setup QR code, bottom right
+(sleep 8; xrdb -merge /opt/panel/Xresources/wificode && urxvt -e /opt/panel/bin/wificode)&
+
+# Run VNC server for logging in to grafana etc.
+x11vnc -display :0 -usepw -noxdamage -forever -o ~/.local/log/x11vnc.log &

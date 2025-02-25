@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# A script to create QR code containing wifi information. It should be directly
+# usable with modern smartphones.
+
+set -e
+
+currentdir=`dirname $0`
+wifi=${currentdir}/../etc/wifi
+
+# Generate string for the QR code
+wifistring="WIFI:S:`head -1 ${wifi}`;T:WPA;P:`tail -1 ${wifi}`;;"
+
+# Use qrencode to generate and display the QR code in terminal
+echo "${wifistring}" | qrencode -t ansiutf8
+
+# This is just to prevent execution from stopping
+read a
+
+exit 0

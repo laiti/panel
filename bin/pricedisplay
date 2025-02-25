@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Pricedisplay wrapper. Pricedisplay does not set itself as a binary but a module.
+
+# https://github.com/YukiNeko-hime/pricedisplay
+
+set -e
+
+cd ~/.local/pipx/venvs/pricedisplay/lib/python*/site-packages
+
+python3 -m pricedisplay
+
+exit 0
