@@ -14,6 +14,9 @@ xset s noblank
 xset -dpms
 xset dpms 0 0 0
 
+# Move mouse to bottom corner. Not needed in all setups.
+#xdotool mousemove 1920 1200
+
 # Run own customizations like disabling touchscreen
 if [ -x /opt/panel/bin/panel-custom ]
 then
