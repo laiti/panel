@@ -1,0 +1,13 @@
+URxvt.depth: 32
+URxvt.cursorColor: #111217
+URxvt.background: #111217
+URxvt.foreground: white
+URxvt.tabbed.tabbar-fg: -2
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tab-fg: 6 
+URxvt.tabbed.tab-bg: -1
+
+URxvt.scrollBar: off
+URxvt.secondaryScroll: true
+URxvt*font: xft:Monaco:pixelsize=16:antialias=true:hinting=true
+URxvt*boldFont: xft:Monaco:bold:pixelsize=16:antialias=true:hinting=true

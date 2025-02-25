@@ -1,0 +1,5 @@
+URxvt.geometry: 38x20+1457+709
+!QRCode is displayed in white
+URxvt.color15: #73bf69
+URxvt*font: xft:Monaco:pixelsize=12:antialias=false:hinting=false
+URxvt*boldFont: xft:Monaco:bold:pixelsize=12:antialias=false:hinting=false
