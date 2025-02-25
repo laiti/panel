@@ -1,16 +1,21 @@
 #!/bin/sh
 
+# This is the main script for the panel, called by systemd service.
+
 set -e
 
 export DISPLAY=:0.0
 
 PATH=/bin:/usr/bin:/opt/panel/bin
 
-# no blanking of daashboard panel!
+# no blanking of dashboard panel!
 xset s off
 xset s noblank
 xset -dpms
 xset dpms 0 0 0
+
+# Move mouse to bottom corner. Not needed in all setups.
+#xdotool mousemove 1920 1200
 
 # Run own customizations like disabling touchscreen
 if [ -x /opt/panel/bin/panel-custom ]
