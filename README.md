@@ -20,10 +20,10 @@ My setup for a dashboard. Probably not usable as-is but perhaps it can work as a
 ## How it works
 The systemd service specified in `systemd/panel.service` starts up a X11 session in vt7. So in other words it expects your system to have no other X11 services enabled.
 
-Instead of starting a window manager, it fires up borderless chromium and rxvt windows, displaying all kinds of data.
+Instead of starting a window manager, it fires up borderless chromium and rxvt windows, displaying all kinds of data. It also starts x11vnc server if you need to do some debugging or log in to a service.
 
 ## What are the rest of the directories?
 
-- `Xresources` contains rxvt configurations for the terminal windows.
-- `etc` - contains currently only one file: `etc/wifi`. It is used for generating the wifi info QR code.
 - `bin` contains the scripts we run. `panel` as the main script, calling the rest.
+- `etc` should contain only one file: `etc/wifi`. It is used for generating the QR code for guest wifi.
+- `Xresources` contains rxvt configurations for the terminal windows.
