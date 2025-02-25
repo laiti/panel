@@ -1,6 +1,9 @@
 # panel
 My setup for a dashboard. Probably not usable as-is but perhaps it can work as an inspiration or a guide.
 
+![Preview](https://raw.githubusercontent.com/laiti/panel/main/screenshot.png)
+
+
 ## Tools
 - X11
 - [rxvt](https://rxvt.net)
