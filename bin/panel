@@ -39,7 +39,7 @@ xrdb -merge /opt/panel/Xresources/common
 (sleep 8; xrdb -merge /opt/panel/Xresources/wificode && urxvt -e wifi-qr-code)&
 
 # Run VNC server for logging in to grafana etc.
-x11vnc -display :0 -usepw -noxdamage -forever -o ~/.local/log/x11vnc.log &
+x11vnc -display :0 -usepw -noxdamage -forever -ncache 10 -o ~/.local/log/x11vnc.log &
 
 
 # BROWSERS
